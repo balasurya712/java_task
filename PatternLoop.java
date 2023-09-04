@@ -1,3 +1,5 @@
+import java.util.*;
+
 class PatternLoop{
 
 static void printStarPattern(int n){
@@ -35,8 +37,12 @@ static void printMinus(int n){
 }
 public static void main(String[] args) {
 
-    printStarPattern(9);
-    printMinus(9);
+    Scanner sc=new Scanner(System.in);  
+    System.out.print("Enter a number ");  
+    int n= sc.nextInt();  
 
+    printStarPattern(n);
+    printMinus(n);
+    sc.close();
 }
 }

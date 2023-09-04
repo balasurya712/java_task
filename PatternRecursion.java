@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class PatternRecursion {
      void printStar(int ctr){
         if(ctr<=0){
@@ -58,9 +60,13 @@ void printMinusPattern(int n,int ctr){
     
 }
 public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);  
+    System.out.print("Enter a number ");  
+    int n= sc.nextInt();
 PatternRecursion obj=new PatternRecursion();
-    obj.printStarPattern(10,1);
-    obj.printMinusPattern(10,0);
+    obj.printStarPattern(n,1);
+    obj.printMinusPattern(n,0);
+    sc.close();
 
 }
 }
