@@ -1,6 +1,6 @@
 public class Shape {
     float pi=3.14f;
-    float r;
+    private float r;
     Shape(){
         System.out.println("Shape is created");
     }
@@ -12,6 +12,8 @@ public class Shape {
 
     Shape(Shape shp){
         this.r=shp.r;
+        System.out.println(r);
+
     }
 
 }

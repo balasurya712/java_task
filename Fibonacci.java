@@ -41,7 +41,10 @@ public class Fibonacci {
     }
     System.out.print(1+" ");
     printRecursion(0,1,n-2);
+    sc.close();
     }
+
+
 
 
 }
