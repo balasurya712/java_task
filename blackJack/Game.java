@@ -1,4 +1,4 @@
-package pk1;
+package blackJack;
 
 import java.util.*;
 interface Cards{
