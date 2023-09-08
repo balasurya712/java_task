@@ -55,6 +55,20 @@ class Play implements Cards{
         }
         
     }
+
+    public Integer delar(Integer pc2) {
+        Integer ran1=(int)Math.floor(Math.random() * (2 - 1 + 1) + 1);
+        Integer fl=1;
+        if(ran1==2){
+                System.out.println("Delar choose to hit");
+                hit(pc);
+                fl = result();
+            }
+        else{
+            System.out.println("Delar choose to stay");
+        }
+        return fl;
+    }
 }
 
 public class Game {
