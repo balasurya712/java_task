@@ -2,7 +2,7 @@ package blackJack;
 
 import java.util.*;
 interface Cards{
-    HashMap <Integer,Integer> ar = new HashMap<Integer,Integer>()
+    HashMap <Integer,Integer> card = new HashMap<Integer,Integer>()
     { {put(2,4);
     put(3,4);
     put(4,4);
@@ -24,11 +24,11 @@ class Play implements Cards{
 
     Integer random(){
         Integer ran=(int)Math.floor(Math.random() * (11 - 2 + 1) + 2);
-        if(ar.get(ran)==0){
+        if(card.get(ran)==0){
             return random();
 
         }
-        ar.replace(ran, ar.get(ran), ar.get(ran)-1);
+        card.replace(ran, card.get(ran), card.get(ran)-1);
             return ran;
     }
 
