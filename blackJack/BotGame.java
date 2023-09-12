@@ -9,6 +9,9 @@ public class BotGame{
         Integer flag=1;
         Integer option;
         pl.start();
+        System.out.println("Enter the number of deck you would like to play");
+        Integer deck=sc.nextInt();
+        pl.changeDeck(deck);
         System.out.println("Enter a limit to for the game");
         Integer limit=sc.nextInt();
         pl.setLimit(limit);

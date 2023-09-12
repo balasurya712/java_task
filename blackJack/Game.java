@@ -13,7 +13,7 @@ interface Cards{
     put(9,4);
     put(10,4);
     put(11,16);
-    }};
+    }};//space complexity O(n)
     void start();//this method run at the starting of the program
     Integer random();//generate a random number from 2 to 11
     void hit(int pc);//calls when user want to hit the card
@@ -45,12 +45,13 @@ class Play implements Cards{
         System.out.println("His total is hidden, too.");
 
         
-    }
+    }// time complexity:O(1)
 
 
     public void showHidden(){
         System.out.println("Delar hidden card is "+HiddenCard);
         System.out.println("His total is "+p2_sum);
+        //time complexity:O(1)
     }//invoked when player choose to stay
 
     public Integer random(){
@@ -60,7 +61,7 @@ class Play implements Cards{
         }
         card.replace(ran, card.get(ran), card.get(ran)-1);
             return ran;
-    }
+    }//time complexity:O(1)
 
     public void hit(int pc){
         Integer tempRandom=random();
@@ -75,7 +76,7 @@ class Play implements Cards{
             System.out.println("Delar total is "+p2_sum);
         }
 
-    }
+    }//time complexity:O(1)
 
     public Integer result(Integer sum){
         if(sum>limit){
@@ -85,7 +86,7 @@ class Play implements Cards{
             return 1;
         }
         
-    }
+    }//time complexity:O(1)
 
     public Integer delar(Integer pc2) {
         Integer ran1=(int)Math.floor(Math.random() * (2 - 1 + 1) + 1);
@@ -100,7 +101,7 @@ class Play implements Cards{
             return 2;
         }
         return fl;
-    }
+    }//time complexity:O(1)
 
     public void stay() {
         System.out.println("Your total is "+p1_sum);
@@ -114,11 +115,18 @@ class Play implements Cards{
         else{
             System.out.println("the game is tie");
         }
-    }
+    }//time complexity:O(1)
 
 
     public void setLimit(Integer limit) {
         this.limit=limit;
+    }//time complexity:O(1)
+
+
+    public void changeDeck(Integer deck) {
+        for(int i=2;i<=11;i++){
+            card.replace(i, card.get(i), card.get(i)*deck);
+        }
     }
 }
 
@@ -129,7 +137,12 @@ public class Game {
         Integer flag=1;
         Integer option;
         pl.start();
-        
+        System.out.println("Enter the number of deck you would like to play");
+        Integer deck=sc.nextInt();
+        pl.changeDeck(deck);
+        System.out.println("Enter a limit to for the game");
+        Integer limit=sc.nextInt();
+        pl.setLimit(limit);
         while(flag==1){
             System.out.println("Would you like to 1.stay or 2.hit (enter 1 or 2)");
             option=sc.nextInt();
@@ -143,7 +156,7 @@ public class Game {
             System.out.println("your total is "+pl.p1_sum+" which execeed the limit");
             System.out.println("so the delar wins");
         }
-        }
+        }//time complexity O(limit/2)
         pl.pc=pl.pc^1;
         if(flag==1){
             pl.showHidden();
@@ -161,7 +174,7 @@ public class Game {
             System.out.println("Delar total is "+pl.p2_sum+" which execeed the limit");
             System.out.println("So you win the game");
         }
-        }
+        }//time complexity O(limit/2)
         
         if(flag==1){
             pl.stay();
