@@ -7,6 +7,7 @@ class Node{
     Node next;
     static Node head;
     static Node tail;
+    static Integer size=1;
 
     Node(Integer val){
         this.val=val;
@@ -17,12 +18,15 @@ class Node{
         Node n=new Node(val);
         tail.next=n;
         tail=n;
+        size++;
         
     }
 
     void remove(Integer val){
+
         if(head.val==val){
             head= head.next;
+            size--;
             return;
         }
         Node prev=null;
@@ -36,7 +40,7 @@ class Node{
         if(cur.next==null){
             tail=prev;
         }
-
+        size--;
         }
         else
         System.out.println("The given element "+val+" is not in the list");
@@ -44,6 +48,11 @@ class Node{
     }
 
     void insert(Integer val,Integer pos){
+        size++;
+        if(pos>=size){
+            add(val);
+            return;
+        }
         Node newNode=new Node(val);
         Node node=head;
         if(pos==1){
@@ -106,6 +115,59 @@ class Node{
         }
         System.out.println();
     }
+
+    public void swapValue(Integer val1, Integer val2) {
+         Node node=head;
+        
+        Node n1=null,n2=null,pre=null,pren1=null,pren2=null;
+        while(node!=null){
+            if(node.val==val1){
+                pren1=pre;
+                n1=node;
+            }
+            else if(node.val==val2){
+                pren2=pre;
+                n2=node;
+            }
+            pre=node;
+            node=node.next;
+        }
+        if(n1.next==n2 && pren1!=null){
+            pren1.next=n2;
+            n1.next=n2.next;
+            n2.next=n1;
+        }
+        else if(n1.next==n2 && pren1==null){
+            n1.next=n2.next;
+            n2.next=n1;
+        }
+        else if(n2.next==n1 && pren2==null){
+            n2.next=n2.next;
+            n1.next=n2;
+        }
+        else if(n2.next==n1 && pren2!=null){
+            pren2.next=n1;
+            n2.next=n1.next;
+            n1.next=n2;
+        }
+        else{
+            if(pren1!=null)
+            pren1.next=n2;
+            if(pren2!=null)
+            pren2.next=n1;
+            Node temp=n1.next;
+            n1.next=n2.next;
+            n2.next=temp;
+        }
+        if(n1==head)
+        head=n2;
+        else if(n2==head)
+        head=n1;
+        if(n2==tail)
+        tail=n1;
+        else if(n2==tail)
+        tail=n2;
+    }
 }
 
 public class LinkListEg{
@@ -124,7 +186,8 @@ public class LinkListEg{
             System.out.println("4. REVERSE LIST");
             System.out.println("5. FIND A ELEMENT");
             System.out.println("6. INSERT A ELEMENT");
-            System.out.println("7. EXIT");
+            System.out.println("7. SWAP ELEMENTS");
+            System.out.println("8. EXIT");
             Integer opt=sc.nextInt();
             switch(opt){
                 case 1:System.out.println("Enter the value to add");
@@ -145,7 +208,13 @@ public class LinkListEg{
                         System.out.println("Enter the index to be inserted");
                         node.insert(vl, sc.nextInt());
                         break;
-                case 7:flag=0;
+                case 7:System.out.println("Enter the values to be swaped");
+                        System.out.println("Enter the value 1");
+                        Integer val1=sc.nextInt();
+                        System.out.println("Enter the value 2");
+                        node.swapValue(val1,sc.nextInt());
+                        break;
+                case 8:flag=0;
                         break;
             }
             

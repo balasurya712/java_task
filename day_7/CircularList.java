@@ -7,6 +7,7 @@ class Node1{
     Node1 next;
     static Node1 head;
     static Node1 tail;
+    static Integer size=1;
 
     Node1(Integer val){
         this.val=val;
@@ -18,12 +19,14 @@ class Node1{
         n.next=head;
         tail.next=n;
         tail=n; 
+        size++;
     }
 
     void remove(Integer val){
         if(head.val==val){
             head= head.next;
             tail.next=head;
+            size--;
             return;
         }
         Node1 prev=null;
@@ -37,6 +40,7 @@ class Node1{
         if(cur.next==head){
             tail=prev;
         }
+        size--;
         }
         else
         System.out.println("The given element "+val+" is not in the list");
@@ -44,6 +48,11 @@ class Node1{
     }
 
     void insert(Integer val,Integer pos){
+        size++;
+        if(pos>=size){
+            add(val);
+            return;
+        }
         Node1 newNode=new Node1(val);
         Node1 node=head;
         if(pos==1){

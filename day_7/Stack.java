@@ -25,7 +25,7 @@ class Node4{
             head= head.next;
             return val;
         }
-        return 0;
+        return -1;
         
     }
     void peek(){

@@ -58,9 +58,13 @@ class Node3{
     }
 
     void insert(Integer val,Integer pos){
-        
-        
         size++;
+        if(pos>=size){
+            add(val);
+            return;
+        }
+        
+        
         System.out.println(size);
         Node3 newNode=new Node3(val);
         if(pos==size){

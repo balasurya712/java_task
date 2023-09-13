@@ -51,9 +51,13 @@ class Node2{
     }
 
     void insert(Integer val,Integer pos){
-        
-        
         size++;
+        if(pos>=size){
+            add(val);
+            return;
+        }
+        
+        
         Node2 newNode=new Node2(val);
         if(pos==size){
             tail.next=newNode;
@@ -80,9 +84,8 @@ class Node2{
     }
 
     void reverse(){
-        Node2 pre=null,cur,nxt,temp=head;
+        Node2 pre=null,cur,temp=head;
         cur=head;
-        nxt=cur.next;
         while(cur!=tail){
             pre=cur.prev;
             cur.prev=cur.next;
