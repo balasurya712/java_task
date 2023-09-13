@@ -133,6 +133,107 @@ class Node3{
         }
         System.out.println(node.val);
     }
+
+    public void swapValue(Integer val1, Integer val2) {
+        Node3 node=head.next;
+        
+        Node3 n1=null,n2=null;
+        if(head.val==val1 )
+        n1=head;
+        if(head.val==val2)
+        n2=head;
+        if(tail.val==val1 )
+        n1=tail;
+        if(tail.val==val2)
+        n2=tail;
+        while(node.next!=head.next){
+            if(node.val==val1){
+                n1=node;
+            }
+            else if(node.val==val2){
+                n2=node;
+            }
+            node=node.next;
+        }
+        if(n1!=null && n2!=null){
+            if(n1.next==n2){
+                n1.prev.next=n2;
+                n2.next.prev=n1;
+                n2.prev=n1.prev;
+                n1.next=n2.next;
+                n1.prev=n2;
+                n2.next=n1;
+                if(n1==head)
+            head=n2;
+            else if(n2==head)
+            head=n1;
+            if(n1==tail)
+            tail=n2;
+            else if(n2==tail)
+            tail=n1;
+            }
+            else if(n2.next==n1){
+                n2.prev.next=n1;
+                n1.next.prev=n2;
+                n1.prev=n2.prev;
+                n2.next=n1.next;
+                n2.prev=n1;
+                n1.next=n2;
+            if(n1==head)
+            head=n2;
+            else if(n2==head)
+            head=n1;
+            if(n2==tail)
+            tail=n1;
+            else if(n2==tail)
+            tail=n2;
+            }
+            else{
+            System.out.println(n1.val+" "+n2.val);
+            Node3 temp=new Node3(0);
+            temp.next=n1.next;
+            temp.prev=n1.prev;
+
+            n1.next=n2.next;
+            n1.prev=n2.prev;
+
+            n1.prev.next=n1;
+            n1.next.prev=n1;
+
+            n2.next=temp.next;
+            n2.prev=temp.prev;
+            
+            System.out.println(n1.val+" "+n2.val);
+            System.out.println(n1.prev.val+" "+n1.next.val);
+            
+            System.out.println(n1.prev.next.val+" "+n1.next.prev.val);
+            System.out.println();
+            System.out.println(n2.prev.val+" "+n2.next.val);
+            n2.prev.next=n2;
+            n2.next.prev=n2;
+            System.out.println(n2.prev.next.val+" "+n2.next.prev.val);
+             if(n1==head)
+            head=n2;
+            else if(n2==head)
+            head=n1;
+            if(n2==tail)
+            tail=n1;
+            else if(n2==tail)
+            tail=n2;
+           } 
+            
+            
+            
+            
+            System.out.println(tail.next.val+" "+head.prev.val);
+
+        
+        }
+        else{
+            System.out.println("given value is not in the list");
+        }
+    
+    }
 }
 
 
@@ -153,7 +254,8 @@ public class CirculrDoublyLink {
             System.out.println("4. REVERSE LIST");
             System.out.println("5. FIND A ELEMENT");
             System.out.println("6. INSERT A ELEMENT");
-            System.out.println("7. EXIT");
+            System.out.println("7. SWAP NODES");
+            System.out.println("8. EXIT");
             Integer opt=sc.nextInt();
             switch(opt){
                 case 1:System.out.println("Enter the value to add");
@@ -175,7 +277,13 @@ public class CirculrDoublyLink {
                         node.insert(vl, sc.nextInt());
                         System.out.println(node.tail.val+" "+node.tail.next.val+" ");
                         break;
-                case 7:flag=0;
+                case 7:System.out.println("Enter the values to be swaped");
+                        System.out.println("Enter the value 1");
+                        Integer val1=sc.nextInt();
+                        System.out.println("Enter the value 2");
+                        node.swapValue(val1,sc.nextInt());
+                        break;
+                case 8:flag=0;
                         break;
             }
             
