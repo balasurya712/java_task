@@ -42,6 +42,7 @@ class Node4{
             System.out.print(node.val+" ");
             node=node.next;
         }
+        System.out.println();
     }
 }
 
@@ -58,7 +59,7 @@ public class Stack {
         while(flag==1){
             System.out.println("Enter the number of the below option to do list operation");
             System.out.println("1. PUSH A ELEMENT");
-            System.out.println("2. VIEW LIST");
+            System.out.println("2. VIEW STACK");
             System.out.println("3. POP A ELEMENT");
             System.out.println("4. PEEK");
             System.out.println("5. EXIT");
