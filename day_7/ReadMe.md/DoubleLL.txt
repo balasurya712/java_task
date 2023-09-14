@@ -1,0 +1,200 @@
+Enter the first element of the list
+1
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+1
+Enter the value to add
+2
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+1
+Enter the value to add
+3
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+1
+Enter the value to add
+4
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+1
+Enter the value to add
+5
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+2
+The elements are: 1 2 3 4 5 
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+3
+Enter the value to remove
+3
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+2
+The elements are: 1 2 4 5 
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+4
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+2
+The elements are: 5 4 2 1 
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+7
+Enter the values to be swaped
+Enter the value 1
+4
+Enter the value 2
+2
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+2
+The elements are: 5 2 4 1 
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+4
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+2
+The elements are: 1 4 2 5 
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+6
+Enter element to be inserted
+3
+Enter the index to be inserted
+3
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+2
+The elements are: 1 4 3 2 5 
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+5
+Enter the value to be searched
+2
+the element 2 is found at index 3
+Enter the number of the below option to do list operation
+1. ADD A ELEMENT
+2. VIEW LIST
+3. REMOVE A ELEMENT
+4. REVERSE LIST
+5. FIND A ELEMENT
+6. INSERT A ELEMENT
+7. SWAP ELEMENTS
+8. EXIT
+8
