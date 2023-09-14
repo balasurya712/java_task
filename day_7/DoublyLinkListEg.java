@@ -124,6 +124,75 @@ class Node2{
         }
         System.out.println();
     }
+
+    public void swapValue(Integer val1, Integer val2) {
+
+        if(head.val==val1 && tail.val==val2){
+            Node2 temp=head;
+            Node2 ttail=tail;
+            
+
+            ttail.next=temp.next;
+            temp.next.prev=ttail;
+            
+            temp.prev=ttail.prev;
+            ttail.prev.next=temp;
+
+            ttail.prev=null;
+            temp.next=null;
+            
+            head = ttail;
+            tail=temp;
+            
+            return;
+        }
+        Node2 node=head;
+        Node2 n1=null,n2=null;
+        while(node.next!=null){
+            if(node.val==val1){
+                n1=node;
+            }
+            else if(node.val==val2){
+                n2=node;
+            }
+            node=node.next;
+        }
+        if(n1!=null && n2!=null){
+            if(n1.next==n2){
+            n2.next.prev=n1;
+            n1.prev.next=n2;
+            n1.next=n2.next;
+            n2.prev=n1.prev;
+            n2.next=n1;
+            n1.prev=n2;
+            }
+            else if(n2.next==n1){
+            n1.next.prev=n2;
+            n2.prev.next=n1;
+            n2.next=n1.next;
+            n1.prev=n2.prev;
+            n1.next=n2;
+            n2.prev=n1;
+            }
+            else{
+            n1.prev.next=n2;
+            n2.prev.next=n1;
+            n1.next.prev=n2;
+            n2.next.prev=n1;
+            Node2 temp=n1.next;
+            n1.next=n2.next;
+            n2.next=temp;
+            temp=n1.prev;
+            n1.prev=n2.prev;
+            n2.prev=temp;
+            }
+        }
+        else{
+            System.out.println("given value is not in list");
+        }
+
+
+    }
 }
 
 
@@ -144,7 +213,8 @@ public class DoublyLinkListEg {
             System.out.println("4. REVERSE LIST");
             System.out.println("5. FIND A ELEMENT");
             System.out.println("6. INSERT A ELEMENT");
-            System.out.println("7. EXIT");
+            System.out.println("7. SWAP ELEMENTS");
+            System.out.println("8. EXIT");
             Integer opt=sc.nextInt();
             switch(opt){
                 case 1:System.out.println("Enter the value to add");
@@ -165,7 +235,13 @@ public class DoublyLinkListEg {
                         System.out.println("Enter the index to be inserted");
                         node.insert(vl, sc.nextInt());
                         break;
-                case 7:flag=0;
+                case 7:System.out.println("Enter the values to be swaped");
+                        System.out.println("Enter the value 1");
+                        Integer val1=sc.nextInt();
+                        System.out.println("Enter the value 2");
+                        node.swapValue(val1,sc.nextInt());
+                        break;
+                case 8:flag=0;
                         break;
             }
             
