@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 class Tree
 {
@@ -43,6 +46,22 @@ class Tree
         arr.add(root.data);
         return arr;
     }
+
+    ArrayList<Integer> levelorder(Tree root,ArrayList<Integer> arr,Queue<Tree> que)
+    {
+        if(que.size()<=0)
+            return arr;
+        Tree n=que.poll();
+        arr.add(n.data);
+        if(root.left!=null){
+            que.add(root.left);
+        }
+        if(root.right!=null){
+            que.add(root.right);
+        }
+        levelorder(que.peek(), arr, que);
+        return arr;
+    }
 }
 public class TreeTraversal {
 public static void main(String args[])
@@ -75,6 +94,14 @@ public static void main(String args[])
 
     arr=t1.postorder(t1,new ArrayList<Integer>());
     System.out.print("postorder: ");
+    for(int i=0;i<arr.size();i++)
+        System.out.print(arr.get(i) +" ");
+    System.out.println();
+
+    Queue<Tree>que=new LinkedList<Tree>();
+    que.add(t1);
+    arr=t1.levelorder(t1,new ArrayList<Integer>(),que);
+    System.out.print("levelorder: ");
     for(int i=0;i<arr.size();i++)
         System.out.print(arr.get(i) +" ");
     System.out.println();
