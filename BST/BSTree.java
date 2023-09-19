@@ -48,6 +48,20 @@ class Node{
         return arr;
     }
 
+     Node find(Node root,int data,int level){
+        if(root == null){
+            System.out.println("Element not found");
+            return root;
+        }
+        if (root.data == data){
+            System.out.println("Element found at level "+level);
+            return root;
+        }
+        if (root.data < data)
+            return find(root.right, data,level+1);
+        return find(root.left, data,level+1);
+    }
+
 }
 
 public class BSTree {
@@ -71,6 +85,15 @@ public class BSTree {
         for(int i=0;i<arr.size();i++)
             System.out.print(arr.get(i) +" ");
         System.out.println();
+        while(true){
+        System.out.println("Enter the element to search");
+        
+        root.find(root, sc.nextInt(), 1);
+        System.out.println("Would you like to continue searching 1.yes 2.no");
+        if(sc.nextInt()==2)
+        break;
+        }
+        
 
     }
     
