@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.Queue;
 
 class Tree
@@ -8,6 +7,7 @@ class Tree
     int data;
     Tree left;
     Tree right;
+    static Integer height;
     Tree(int data)
     {
         this.data=data;
@@ -61,6 +61,16 @@ class Tree
         }
         levelorder(que.peek(), arr, que);
         return arr;
+    }
+
+    void heightOFtree(NaryTree node,Integer curHeight) {
+        if(node==null){
+            if(curHeight>height)
+            height=curHeight;
+            return;
+        }
+        heightOFtree(node, curHeight+1);
+
     }
 }
 public class TreeTraversal {

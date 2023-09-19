@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 class NaryTree
 {
-    int data;
+    Integer data;
+    static Integer height=0;
     ArrayList<NaryTree> ar=new ArrayList<>();
     NaryTree(int data)
     {
@@ -63,6 +64,19 @@ class NaryTree
         levelorder(que.peek(), arr, que);
         return arr;
     }
+
+    void heightOFtree(NaryTree node,Integer curHeight) {
+        if(node==null){
+            return;
+        }
+        for (NaryTree n : node.ar) {
+            heightOFtree(n, curHeight+1);
+            if(curHeight+1>height)
+            height=curHeight+1;
+        }
+        
+
+    }
 }
 
 public class NaryTreeTraversal {
@@ -90,7 +104,6 @@ public class NaryTreeTraversal {
                 
             }
             arr.clear();
-            sc.close();
     }
 
     public static void main(String[] args) {
@@ -124,6 +137,8 @@ public class NaryTreeTraversal {
         System.out.print(arr.get(i) +" ");
     System.out.println();
     sc.close();
+    root.heightOFtree(root, 1);
+    System.out.println("height of tree is "+NaryTree.height);
     
     }
     
