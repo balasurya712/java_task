@@ -1,6 +1,6 @@
-
-
 package Leet_Code;
+
+import java.util.Scanner;
 
 class Node{
     Integer val;
@@ -84,16 +84,26 @@ class Solution {
 public class ReorderListPL146{
     public static void main(String[] args) {
         Solution s=new Solution();
-        Node n=new Node(1);
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the root node value");
+        Node n=new Node(sc.nextInt());
         n.head=n;
         n.tail=n;
-        n.add(2);
-        n.add(3);
-        n.add(4);
-        n.add(5);
-        n.add(6);
+        Integer a;
+        while(true){
+            System.out.println("Would you like to add element 1.yes 2.no");
+            
+            if(sc.nextInt()==2)
+            break;
+            System.out.println("Enter the Element value");
+            a=sc.nextInt();
+            n.add(a);
+        }
+        System.out.println("list original order");
         n.traverse();
+
         s.reorderList(n);
+        System.out.println("list Reorder");
         n.traverse();
     }
 }

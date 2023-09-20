@@ -15,7 +15,7 @@ public class LongestRepitingCharacterPL424 {
         Integer nonRepeatcharcount=0;
         System.out.println("Enter the string : ");
         s=sc.nextLine();
-        System.out.println("Enter the number of operations : ");
+        System.out.println("Enter the k value : ");
         k=sc.nextInt();
 
         for(int i=0;i<s.length();i++){
