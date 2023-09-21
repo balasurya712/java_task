@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 import java.util.Scanner;
+import java.util.Stack;
 
-import day_7.Queue;
+
 
 public class GraphBFS {
     static HashMap<Integer,ArrayList<Integer>> node= new HashMap<>();
@@ -25,6 +26,23 @@ public class GraphBFS {
         }
         System.out.println();
     }
+
+    //  static void dfs(Integer orgin){
+    //     Stack<Integer> que=new Stack<>();
+    //     ArrayList<Integer> visited=new ArrayList<>();
+    //     que.push(orgin);
+    //     Integer cur;
+    //     while(!que.empty()){
+    //         cur=que.pop();
+    //         if(visited.contains(cur))
+    //         continue;
+    //         visited.add(cur);
+    //         System.out.print(cur+" ");
+    //         que.addAll(node.get(cur));
+    //     }
+    //     System.out.println();
+    // }
+
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         PriorityQueue<Integer> que=new PriorityQueue<>();
