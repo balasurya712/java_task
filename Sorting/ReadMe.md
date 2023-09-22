@@ -13,3 +13,7 @@ CockTail sort
 Quick Sort
 
 ![Image coudn't load](quick_sort.PNG)
+
+Merge Sort
+
+![Image coudn't load](Merge_sort.PNG)
