@@ -1,4 +1,4 @@
-package day_9_29.graph;
+package graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,7 +8,7 @@ import java.util.Stack;
 
 
 
-public class GraphBFS {
+public class Graph {
     static HashMap<Integer,ArrayList<Integer>> node= new HashMap<>();
 
     static void bfs(Integer orgin){
@@ -27,21 +27,21 @@ public class GraphBFS {
         System.out.println();
     }
 
-    //  static void dfs(Integer orgin){
-    //     Stack<Integer> que=new Stack<>();
-    //     ArrayList<Integer> visited=new ArrayList<>();
-    //     que.push(orgin);
-    //     Integer cur;
-    //     while(!que.empty()){
-    //         cur=que.pop();
-    //         if(visited.contains(cur))
-    //         continue;
-    //         visited.add(cur);
-    //         System.out.print(cur+" ");
-    //         que.addAll(node.get(cur));
-    //     }
-    //     System.out.println();
-    // }
+     static void dfs(Integer orgin){
+        Stack<Integer> que=new Stack<>();
+        ArrayList<Integer> visited=new ArrayList<>();
+        que.push(orgin);
+        Integer cur;
+        while(!que.empty()){
+            cur=que.pop();
+            if(visited.contains(cur))
+            continue;
+            visited.add(cur);
+            System.out.print(cur+" ");
+            que.addAll(node.get(cur));
+        }
+        System.out.println();
+    }
 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
@@ -88,7 +88,15 @@ public class GraphBFS {
             Integer orgin=sc.nextInt();
             bfs(orgin);
         }
-        
+        while(true){
+            System.out.println("Would you like to do dfs 1.yes 2.no");
+            Integer choise=sc.nextInt();
+            if(choise==2)
+            break;
+            System.out.println("Enter the orgin element");
+            Integer orgin=sc.nextInt();
+            dfs(orgin);
+        }
     }
     
 }

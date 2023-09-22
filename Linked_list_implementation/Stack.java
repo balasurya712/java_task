@@ -1,4 +1,4 @@
-package day_7;
+package Linked_list_implementation;
 
 import java.util.Scanner;
 

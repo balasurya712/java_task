@@ -1,49 +1,52 @@
-package day_7;
+package Linked_list_implementation;
 
 import java.util.Scanner;
 
-class Node{
+class Node2{
     Integer val;
-    Node next;
-    static Node head;
-    static Node tail;
+    Node2 next;
+    Node2 prev;
+    static Node2 head;
+    static Node2 tail;
     static Integer size=1;
 
-    Node(Integer val){
+    Node2(Integer val){
         this.val=val;
         next=null;
+        this.prev=null;
     }
 
     void add(Integer val){
-        Node n=new Node(val);
+        Node2 n=new Node2(val);
         tail.next=n;
+        n.prev=tail;
         tail=n;
         size++;
-        
     }
 
     void remove(Integer val){
-
         if(head.val==val){
             head= head.next;
-            size--;
+            head.prev=null;
             return;
         }
-        Node prev=null;
-        Node cur=head.next;
+        Node2 cur=head.next;
         while(cur.val!=val && cur.next!=null){
-            prev=cur;
             cur=cur.next;
         }
-        if(cur.val==val){
-        prev.next=cur.next;
-        if(cur.next==null){
-            tail=prev;
+        if(cur.val==val && cur.next!=null){
+        cur.next.prev=cur.prev;
+        cur.prev.next=cur.next;
+        }else if(cur.val==val && cur.next==null){
+            cur.prev.next=cur.next;
+            tail=tail.prev;
+        
         }
-        size--;
-        }
-        else
+        else{
         System.out.println("The given element "+val+" is not in the list");
+    return;
+    }
+    size--;
         
     }
 
@@ -53,10 +56,19 @@ class Node{
             add(val);
             return;
         }
-        Node newNode=new Node(val);
-        Node node=head;
+        
+        
+        Node2 newNode=new Node2(val);
+        if(pos==size){
+            tail.next=newNode;
+        newNode.prev=tail;
+        tail=newNode;
+        return;
+        }
+        Node2 node=head;
         if(pos==1){
             newNode.next=head;
+            head.prev=newNode;
             head=newNode;
             return;
         }
@@ -64,27 +76,24 @@ class Node{
             pos--;
             node=node.next;
         }
-        if(node.next==null){
-            tail.next=newNode;
-            tail=newNode;
-            return;
-        }
         newNode.next=node.next;
+        newNode.prev=node;
         node.next=newNode;
+        newNode.next.prev=newNode;
 
     }
 
     void reverse(){
-        Node pre=null,cur,nxt,temp=head;
+        Node2 pre=null,cur,temp=head;
         cur=head;
-        nxt=cur.next;
         while(cur!=tail){
+            pre=cur.prev;
+            cur.prev=cur.next;
             cur.next=pre;
-            pre=cur;
-            cur=nxt;
-            nxt=cur.next;
+            cur=cur.prev;
         }
-        cur.next=pre;
+        cur.next=cur.prev;
+        cur.prev=null;
         tail=temp;
         head=cur;
 
@@ -92,7 +101,7 @@ class Node{
     }
 
     void find(Integer val){
-        Node node=head;
+        Node2 node=head;
         Integer index=0;
         while(node.val!=val && node.next!=null){
             node=node.next;
@@ -107,7 +116,7 @@ class Node{
     }
 
     void traverse(){
-        Node node=head;
+        Node2 node=head;
         System.out.print("The elements are: ");
         while(node!=null){
             System.out.print(node.val+" ");
@@ -117,64 +126,82 @@ class Node{
     }
 
     public void swapValue(Integer val1, Integer val2) {
-         Node node=head;
-        
-        Node n1=null,n2=null,pre=null,pren1=null,pren2=null;
-        while(node!=null){
+
+        if(head.val==val1 && tail.val==val2){
+            Node2 temp=head;
+            Node2 ttail=tail;
+            
+
+            ttail.next=temp.next;
+            temp.next.prev=ttail;
+            
+            temp.prev=ttail.prev;
+            ttail.prev.next=temp;
+
+            ttail.prev=null;
+            temp.next=null;
+            
+            head = ttail;
+            tail=temp;
+            
+            return;
+        }
+        Node2 node=head;
+        Node2 n1=null,n2=null;
+        while(node.next!=null){
             if(node.val==val1){
-                pren1=pre;
                 n1=node;
             }
             else if(node.val==val2){
-                pren2=pre;
                 n2=node;
             }
-            pre=node;
             node=node.next;
         }
-        if(n1.next==n2 && pren1!=null){
-            pren1.next=n2;
+        if(n1!=null && n2!=null){
+            if(n1.next==n2){
+            n2.next.prev=n1;
+            n1.prev.next=n2;
             n1.next=n2.next;
+            n2.prev=n1.prev;
             n2.next=n1;
-        }
-        else if(n1.next==n2 && pren1==null){
-            n1.next=n2.next;
-            n2.next=n1;
-        }
-        else if(n2.next==n1 && pren2==null){
-            n2.next=n2.next;
-            n1.next=n2;
-        }
-        else if(n2.next==n1 && pren2!=null){
-            pren2.next=n1;
+            n1.prev=n2;
+            }
+            else if(n2.next==n1){
+            n1.next.prev=n2;
+            n2.prev.next=n1;
             n2.next=n1.next;
+            n1.prev=n2.prev;
             n1.next=n2;
-        }
-        else{
-            if(pren1!=null)
-            pren1.next=n2;
-            if(pren2!=null)
-            pren2.next=n1;
-            Node temp=n1.next;
+            n2.prev=n1;
+            }
+            else{
+            n1.prev.next=n2;
+            n2.prev.next=n1;
+            n1.next.prev=n2;
+            n2.next.prev=n1;
+            Node2 temp=n1.next;
             n1.next=n2.next;
             n2.next=temp;
+            temp=n1.prev;
+            n1.prev=n2.prev;
+            n2.prev=temp;
+            }
         }
-        if(n1==head)
-        head=n2;
-        else if(n2==head)
-        head=n1;
-        if(n2==tail)
-        tail=n1;
-        else if(n2==tail)
-        tail=n2;
+        else{
+            System.out.println("given value is not in list");
+        }
+
+
     }
 }
 
-public class LinkListEg{
-    public static void main(String[] args) {
+
+public class DoublyLinkListEg {
+     public static void main(String[] args) {
+        
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the first element of the list");
-        Node node=new Node(sc.nextInt());
+        Node2 node=new Node2(sc.nextInt());
         node.head=node;
         node.tail=node;
         Integer flag=1;
@@ -219,7 +246,6 @@ public class LinkListEg{
             }
             
         }
-       
        
     }
 }
