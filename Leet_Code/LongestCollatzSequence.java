@@ -39,7 +39,7 @@ public class LongestCollatzSequence {
         s.hp.put(1l, 1l);
         long max=0;
         System.out.println();
-        for(long i=2;i<1000000000;i++){
+        for(long i=2;i<1000000;i++){
             long temp=s.chainCount(i, 0);
             if(temp>max){
                 max=temp;

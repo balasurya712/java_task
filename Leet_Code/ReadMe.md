@@ -6,3 +6,7 @@ Reorder List
 
 ![Image could't display](ReorderListPL146_1.PNG)
 ![Image could't display](ReorderListPL146_2.PNG)
+
+LongestCollatzSequence
+
+![Image could't display](LongestCollatzSequence.PNG)
