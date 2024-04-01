@@ -21,18 +21,14 @@ item_name varchar(500),
 item_type varchar(50)
 );
 
-create table book(
-isbn varchar(10) primary key,
-item_id int,
-title varchar(20),
-book_year int,
-price float4,
+create table product(
+product_id int primary key,
+product_type varchar(20),
+product_year int,
 author_name varchar(20),
-address varchar(50) ,
 publisher_name varchar(20),
 foreign key(publisher_name) references publisher(publisher_name) ,
-foreign key(author_name,address) references author(author_name,address),
-foreign key(item_id) references item(item_id)
+foreign key(author_name) references author(author_name),
 );
 
 create table music_cassettes(

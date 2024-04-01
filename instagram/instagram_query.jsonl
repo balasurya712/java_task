@@ -1,0 +1,254 @@
+use instagram
+db.createCollection("users")
+db.users.insertMany(
+    [
+        { 
+            email: "user1@gmail.com",
+            verified: "no",
+            phnumber: 9999876788,
+            dob: '05/05/2002',
+            pwd: 'user1' 
+        },
+        { 
+            email: "user2@gmail.com",
+            verified: "yes",
+            phnumber: 9989876788,
+            dob: '05/05/1992',
+            pwd: 'user2' 
+        }, 
+        { 
+            email: "user3@gmail.com",
+            verified: "no",
+            phnumber: 6369876788,
+            dob: '07/12/2002',
+            pwd: 'user3' 
+        }
+    ]
+)
+
+db.createCollection("pages")
+
+db.pages.insertMany ([
+        {
+            user_id: ObjectId("652ba3b79349228d876df879"),
+            page_name: "user1",
+            page_handle: "user_1",
+            bio: "nothing to say",
+            dp: "",
+            avatar: "",
+            pwd: "user1",
+            dob: "05/05/2002",
+            page_privacy:"private"
+        },
+        {
+            user_id:  ObjectId("652ba3b79349228d876df87a"),
+            page_name: "user2",
+            page_handle: "user_2",
+            bio: "nothing to say",
+            dp: "",
+            avatar: "",
+            pwd: "user2",
+            dob: "05/07/2002",
+            page_privacy:"public"
+        },
+        {
+            user_id:  ObjectId("652ba3b79349228d876df87a"),
+            page_name: "user3",
+            page_handle: "user_3",
+            bio: "nothing to say",
+            dp: "",
+            avatar: "",
+            pwd: "user3",
+            dob: "05/07/1992",
+            page_privacy:"private"
+        }
+    ]
+)
+db.createCollection("followdetails")
+
+db.followdetails.insertMany([
+        {
+            followers:ObjectId("652ba3b79349228d876df87a") ,
+            following:  ObjectId("652ba3b79349228d876df879"),
+        },
+        {
+            followers:ObjectId("652ba3b79349228d876df87a") ,
+            following: ObjectId("652ba3b79349228d876df87b")
+        },
+        {
+            followers:ObjectId("652ba3b79349228d876df87b") ,
+            following: ObjectId("652ba3b79349228d876df87a")
+        }
+    ]
+)
+
+db.createCollection("device")
+
+db.device.insertMany([
+        {
+            page_id: ObjectId("652ba77b9349228d876df87c"),
+            device_location: "chennai",
+            login_time:"7:00 pm" ,
+            logout_time: "",
+            cookie: "cookie"
+        },
+        {
+            page_id: ObjectId("652ba77b9349228d876df87d"),
+            device_location: "chennai",
+            login_time:"7:00 pm" ,
+            logout_time: "",
+            cookie: "cookie"
+        },
+        {
+            page_id: ObjectId("652ba77b9349228d876df87e"),
+            device_location: "chennai",
+            login_time:"7:00 pm" ,
+            logout_time: "",
+            cookie: "cookie"
+        }
+    ]
+)
+
+db.createCollection("chat")
+
+db.chat.insertMany([
+        {
+            chat_type: "single",
+            vanish_mode: "false",
+            settings: ""
+        },
+        {
+            chat_type: "group",
+            vanish_mode: "false",
+            settings: ""
+        },
+        {
+            chat_type: "single",
+            vanish_mode: "true",
+            settings: ""
+        },
+    ]
+)
+
+db.createCollection("message")
+
+db.message.insertMany([
+        {
+            content:"hi " ,
+            sender: ObjectId("652ba77b9349228d876df87c"),
+            media_link: "",
+            time: "7:00 pm",
+            chat_id: ObjectId("652bad684d3667e7866ef716"),
+            is_vanish_mode: "false",
+        },
+        {
+            content:"how are you" ,
+            sender: ObjectId("652ba77b9349228d876df87d"),
+            media_link: "",
+            time: "8:00 pm",
+            chat_id:  ObjectId("652bad684d3667e7866ef718"),
+            is_vanish_mode: "true"
+        },
+        {
+            content:"not bad" ,
+            sender: ObjectId("652ba77b9349228d876df87e"),
+            media_link: "",
+            time: "9:00 pm",
+            chat_id: ObjectId("652bad684d3667e7866ef717"),
+            is_vanish_mode: "false"
+        }
+]
+)
+
+db.createCollection("chat_details")
+
+db.chat_details.insertMany([
+        {
+            chat_id:ObjectId("652bad684d3667e7866ef716") ,
+            page_id:  ObjectId("652ba77b9349228d876df87e"),
+            is_admin:true ,
+            lastReadMessage_id:ObjectId("652bafcbcf6b4e950f618a2e")
+         },
+         {
+            chat_id: ObjectId("652bad684d3667e7866ef717"),
+            page_id:  ObjectId("652ba77b9349228d876df87d"),
+            is_admin: true,
+            lastReadMessage_id: ObjectId("652baffacf6b4e950f618a2f")
+         },
+         {
+            chat_id:ObjectId("652bad684d3667e7866ef718") ,
+            page_id: ObjectId("652ba77b9349228d876df87c"),
+            is_admin: false,
+            lastReadMessage_id:ObjectId("652baffacf6b4e950f618a30")
+         }
+    ]
+)
+
+db.createCollection("music")
+
+db.music.insertMany([
+        {
+            title: "single pasaga",
+            artist: "hip hop tamizah",
+            lyrics: "",
+            thumbnail: "url"
+        },
+        {
+            title: "aval",
+            artist: "pradeep kumar",
+            lyrics: "",
+            thumbnail: "url"
+        },
+        {
+            title: "poi valva",
+            artist: "pradeep kumar",
+            lyrics: "",
+            thumbnail: "url"
+        }
+    ]
+)
+
+db.createCollection("content")
+
+db.content.insertMany([
+        {
+            page_id : ObjectId("652ba77b9349228d876df87c") ,
+            post_media:"url" ,
+            media_type:"post" ,
+            music_id: ObjectId("652bb475fc115db2ece1bece") ,
+            views: 7000,
+            primary_poster: ObjectId("652ba77b9349228d876df87c"),
+            likes: 600,
+            caption: "",
+            date_and_time:new ISODate("2020-05-18T14:10:30Z") ,
+            location: "chennai",
+            music_id_timestamp:"5s"
+        },
+        {
+            page_id : ObjectId("652ba77b9349228d876df87c") ,
+            post_media:"url" ,
+            media_type:"post" ,
+            music_id: ObjectId("652bb475fc115db2ece1becf") ,
+            views: 706000,
+            primary_poster: ObjectId("652ba77b9349228d876df87c"),
+            likes: 67700,
+            caption: "",
+            date_and_time:new ISODate("2022-05-18T14:10:30Z") ,
+            location: "coimbatore",
+            music_id_timestamp:"60s"
+        },
+        {
+            page_id : ObjectId("652ba77b9349228d876df87d") ,
+            post_media:"url" ,
+            media_type:"story" ,
+            music_id: ObjectId("652bb475fc115db2ece1bed0") ,
+            views: 1000,
+            primary_poster: ObjectId("652ba77b9349228d876df87c"),
+            likes: 500,
+            caption: "",
+            date_and_time:new ISODate("2023-05-28T14:10:30Z") ,
+            location: "karur",
+            music_id_timestamp:"70s"
+        }
+    ]
+)

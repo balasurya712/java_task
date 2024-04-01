@@ -1,0 +1,566 @@
+db.posts.insertMany([{
+    "_id":1,
+    "page_id": 12345678,
+    "media_type": "post",
+    "uploaded_date_and_time": ISODate("2023-10-20T09:00:00Z"),
+    "music_id": 987654,
+    "post_media": "image_url1.jpg",
+    "liked_pages": [23456789, 34567890, 45678901],
+    "total_views": 1000,
+    "comments": [
+      {
+        "page_id": 23456789,
+        "comment": "Great shot!",
+        "replies": [
+          {
+            "page_id": 54321098,
+            "comment": "Thanks! It was a beautiful day."
+          },
+          {
+            "page_id": 65432109,
+            "comment": "I agree, stunning!"
+          }
+        ]
+      },
+      {
+        "page_id": 34567890,
+        "comment": "Love the view!",
+        "replies": [
+          {
+            "page_id": 98765432,
+            "comment": "It's my favorite spot."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id":2,
+    "page_id": 54321098,
+    "media_type": "post",
+    "uploaded_date_and_time": ISODate("2023-10-21T15:00:00Z"),
+    "music_id": 876543,
+    "post_media": "image_url2.jpg",
+    "liked_pages": [12345678, 23456789],
+    "total_views": 800,
+    "comments": [
+      {
+        "page_id": 23456789,
+        "comment": "Beautiful shot!"
+      },
+      {
+        "page_id": 12345678,
+        "comment": "Thanks! It's my favorite place."
+      }
+    ]
+  },
+  { 
+    "_id":3,
+    "page_id": 98765432,
+    "media_type": "post",
+    "uploaded_date_and_time": ISODate("2023-10-22T12:30:00Z"),
+    "music_id": 789012,
+    "post_media": "image_url3.jpg",
+    "liked_pages": [55555555, 65432109],
+    "total_views": 1200,
+    "comments": [
+      {
+        "page_id": 55555555,
+        "comment": "Amazing photo!"
+      },
+      {
+        "page_id": 65432109,
+        "comment": "Love your feed!"
+      }
+    ]
+  },
+  {
+    "_id":4,
+    "page_id": 55555555,
+    "media_type": "post",
+    "uploaded_date_and_time": ISODate("2023-10-23T10:15:00Z"),
+    "music_id": null,
+    "post_media": "image_url4.jpg",
+    "liked_pages": [12345678, 98765432],
+    "total_views": 1500,
+    "comments": [
+      {
+        "page_id": 12345678,
+        "comment": "Stunning view!"
+      },
+      {
+        "page_id": 98765432,
+        "comment": "I need to visit this place."
+      }
+    ]
+  },
+  {
+    "_id":5,
+    "page_id": 65432109,
+    "media_type": "post",
+    "uploaded_date_and_time": ISODate("2023-10-24T14:45:00Z"),
+    "music_id": 654321,
+    "post_media": "image_url5.jpg",
+    "liked_pages": [55555555, 98765432],
+    "total_views": 1100,
+    "comments": [
+      {
+        "page_id": 55555555,
+        "comment": "Incredible shot!"
+      },
+      {
+        "page_id": 98765432,
+        "comment": "Agreed!"
+      },
+      {
+        "page_id": 55555555,
+        "comment": "Thank you!"
+      }
+    ]
+  },
+  {
+    "_id":6,
+    "page_id": 55555555,
+    "media_type": "post",
+    "uploaded_date_and_time": ISODate("2023-10-25T16:30:00Z"),
+    "music_id": 654321,
+    "post_media": "image_url6.jpg",
+    "liked_pages": [12345678, 98765432],
+    "total_views": 1400,
+    "comments": [
+      {
+        "page_id": 12345678,
+        "comment": "This is breathtaking!"
+      },
+      {
+        "page_id": 98765432,
+        "comment": "One of my favorite spots."
+      },
+      {
+        "page_id": 12345678,
+        "comment": "Agreed!"
+      }
+    ]
+  },
+  {
+    "_id":7,
+    "page_id": 98765432,
+    "media_type": "post",
+    "uploaded_date_and_time": ISODate("2023-10-26T18:15:00Z"),
+    "music_id": 876543,
+    "post_media": "image_url7.jpg",
+    "liked_pages": [55555555, 12345678],
+    "total_views": 1600,
+    "comments": [
+      {
+        "page_id": 55555555,
+        "comment": "Wow, incredible!"
+      },
+      {
+        "page_id": 12345678,
+        "comment": "I have to go there!"
+      }
+    ]
+  },
+  {
+    "_id":8,
+    "page_id": 12345678,
+    "media_type": "post",
+    "uploaded_date_and_time": ISODate("2023-10-27T20:00:00Z"),
+    "music_id": null,
+    "post_media": "image_url8.jpg",
+    "liked_pages": [55555555, 98765432, 65432109],
+    "total_views": 1800,
+    "comments": [
+      {
+        "page_id": 55555555,
+        "comment": "Absolutely amazing!"
+      },
+      {
+        "page_id": 98765432,
+        "comment": "I'm speechless."
+      },
+      {
+        "page_id": 65432109,
+        "comment": "Where is this?"
+      }
+    ]
+  }
+  ])
+  
+  
+  
+  
+  db.pages.insertMany(
+  [
+    {
+      "_id": 12345678,
+      "user_id": "user_1",
+      "page_name": "NatureLover",
+      "page_handle": "nature4ever",
+      "avatar": "avatar_url1.jpg",
+      "bio": "Exploring the beauty of nature.",
+      "password": "hashed_password1",
+      "dob": ISODate("1995-05-15"),
+      "page_privacy": "public",
+      "following": [55555555, 98765432, 65432109]
+    },
+    {
+      "_id": 98765432,
+      "user_id": "user_2",
+      "page_name": "FoodieDelights",
+      "page_handle": "yumtreats",
+      "avatar": "avatar_url2.jpg",
+      "bio": "Discovering delicious cuisines.",
+      "password": "hashed_password2",
+      "dob": ISODate("1988-10-02"),
+      "page_privacy": "public",
+      "following": [55555555, 12345678]
+    },
+    {
+      "_id": 55555555,
+      "user_id": "user_3",
+      "page_name": "TravelAdventures",
+      "page_handle": "wanderlust",
+      "avatar": "avatar_url3.jpg",
+      "bio": "Exploring the world, one trip at a time.",
+      "password": "hashed_password3",
+      "dob": ISODate("1990-07-20"),
+      "page_privacy": "private",
+      "following": [98765432]
+    },
+    {
+      "_id": 65432109,
+      "user_id": "user_4",
+      "page_name": "FitnessJunkie",
+      "page_handle": "fitfreak",
+      "avatar": "avatar_url4.jpg",
+      "bio": "Sweat, smile, repeat!",
+      "password": "hashed_password4",
+      "dob": ISODate("1985-02-12"),
+      "page_privacy": "public",
+      "following": [12345678, 55555555, 98765432]
+    },
+    {
+      "_id": 34567890,
+      "user_id": "user_5",
+      "page_name": "ArtisticExpressions",
+      "page_handle": "artlover",
+      "avatar": "avatar_url5.jpg",
+      "bio": "A world of colors and creativity.",
+      "password": "hashed_password5",
+      "dob": ISODate("1992-09-28"),
+      "page_privacy": "public",
+      "following": [12345678, 98765432, 65432109]
+    },
+    {
+      "_id": 77777777,
+      "user_id": "user_6",
+      "page_name": "Fashionista",
+      "page_handle": "styleicon",
+      "avatar": "avatar_url6.jpg",
+      "bio": "Fashion is my passion.",
+      "password": "hashed_password6",
+      "dob": ISODate("1993-03-05"),
+      "page_privacy": "public",
+      "following": [55555555, 98765432]
+    },
+    {
+      "_id": 88888888,
+      "user_id": "user_7",
+      "page_name": "TechGeek",
+      "page_handle": "gadgetguru",
+      "avatar": "avatar_url7.jpg",
+      "bio": "Exploring the latest tech trends.",
+      "password": "hashed_password7",
+      "dob": ISODate("1987-11-11"),
+      "page_privacy": "private",
+      "following": [12345678]
+    },
+    {
+      "_id": 99999999,
+      "user_id": "user_8",
+      "page_name": "PetLover",
+      "page_handle": "furryfriends",
+      "avatar": "avatar_url8.jpg",
+      "bio": "Adoring pets of all shapes and sizes.",
+      "password": "hashed_password8",
+      "dob": ISODate("1991-04-30"),
+      "page_privacy": "public",
+      "following": [55555555, 98765432, 65432109]
+    },
+    {
+      "_id": 77777778,
+      "user_id": "user_9",
+      "page_name": "MotivationHub",
+      "page_handle": "stayinspired",
+      "avatar": "avatar_url9.jpg",
+      "bio": "Daily dose of inspiration and motivation.",
+      "password": "hashed_password9",
+      "dob": ISODate("1989-08-17"),
+      "page_privacy": "public",
+      "following": [12345678, 98765432]
+    },
+    {
+      "_id": 77777779,
+      "user_id": "user_10",
+      "page_name": "GamingGuru",
+      "page_handle": "playmaster",
+      "avatar": "avatar_url10.jpg",
+      "bio": "Leveling up one game at a time.",
+      "password": "hashed_password10",
+      "dob": ISODate("1994-06-25"),
+      "page_privacy": "public",
+      "following": [55555555, 98765432]
+    }
+  ]
+  )
+  
+  
+  db.users.insertMany(
+  [
+    {
+      "_id": "user_1",
+      "email": "user1@example.com",
+      "verified": "yes",
+      "dob": ISODate("1995-05-15"),
+      "phonenumber": "+1234567890"
+    },
+    {
+      "_id": "user_2",
+      "email": "user2@example.com",
+      "verified": "yes",
+      "dob": ISODate("1988-10-02"),
+      "phonenumber": "+9876543210"
+    },
+    {
+      "_id": "user_3",
+      "email": "user3@example.com",
+      "verified": "no",
+      "dob": ISODate("1990-07-20"),
+      "phonenumber": "+1112223333"
+    },
+    {
+      "_id": "user_4",
+      "email": "user4@example.com",
+      "verified": "yes",
+      "dob": ISODate("1985-02-12"),
+      "phonenumber": "+4445556666"
+    },
+    {
+      "_id": "user_5",
+      "email": "user5@example.com",
+      "verified": "no",
+      "dob": ISODate("1992-09-28"),
+      "phonenumber": "+5556667777"
+    },
+    {
+      "_id": "user_6",
+      "email": "user6@example.com",
+      "verified": "yes",
+      "dob": ISODate("1993-03-05"),
+      "phonenumber": "+9876543210"
+    },
+    {
+      "_id": "user_7",
+      "email": "user7@example.com",
+      "verified": "yes",
+      "dob": ISODate("1987-11-11"),
+      "phonenumber": "+3334445555"
+    },
+    {
+      "_id": "user_8",
+      "email": "user8@example.com",
+      "verified": "yes",
+      "dob": ISODate("1991-04-30"),
+      "phonenumber": "+6667778888"
+    },
+    {
+      "_id": "user_9",
+      "email": "user9@example.com",
+      "verified": "yes",
+      "dob": ISODate("1989-08-17"),
+      "phonenumber": "+1112223333"
+    },
+    {
+      "_id": "user_10",
+      "email": "user10@example.com",
+      "verified": "yes",
+      "dob": ISODate("1994-06-25"),
+      "phonenumber": "+5556667777"
+    }
+  ])
+
+mutual friends
+
+db.pages.aggregate([
+    {     $match:{
+      $or:[{ _id: 12345678 },
+              { _id: 77777778 }
+          ]
+      }
+    },
+    
+    {    $group: {
+         _id:null,
+         following1: { $first: "$following" },
+         following2: { $last: "$following" }
+         }
+    },
+    {    $project:{
+        mutual_following:{
+        $setIntersection:["$following1","$following2"]
+        }
+         }
+    }
+    
+ ])
+
+ recent posts
+
+ db.pages.aggregate([
+    {
+      $match: {
+        "_id": 12345678 
+      }
+    },
+    {
+      $unwind: "$following" 
+    },
+    {
+      $lookup: {
+        from: "posts", 
+        localField: "following",
+        foreignField: "page_id",
+        as: "followerpost"
+      }
+    },
+    {
+      $unwind: "$followerpost"
+    },
+    {
+      $sort: {
+        "followerpost.uploaded_date_and_time": -1 
+      }
+    },
+    {
+      $project: {
+        "_id": "$followerpost._id",
+        "page_id": "$followerpost.page_id",
+        "uploaded_date_and_time": "$followerpost.uploaded_date_and_time",
+        "post_media": "$followerpost.post_media"
+      }
+    },
+    {
+      $limit: 10
+    }
+  ])
+
+
+
+interected list
+
+  db.pages.aggregate([
+    {
+      $match: {
+        "_id": 12345678 
+      }
+    },
+    {
+      $lookup: {
+        from: "posts", 
+        localField: "_id",
+        foreignField: "page_id",
+        as: "interaction"
+      }
+    },
+    {
+        $unwind: "$interaction"
+      },
+    { 
+        $project:
+        { 
+            page: 
+            {
+                 $concatArrays: [ "$interaction.liked_pages", "$interaction.comments.page_id" ]
+            }
+        }
+    },
+    {
+        $unwind: "$page"
+      },
+      {
+        $group:{
+            _id:"$page",count:{
+                $sum:1
+            }
+        }
+      },
+      {
+        $sort:{
+            count:-1
+        }
+      }
+    ])
+ 
+
+    mutual friends 
+    [{ $match: 
+	{ $or: [ 
+    { followerId: '65a6558bfed7a90a9f1ed1f0' },
+    { followerId: '65a65586fed7a90a9f1ed1ed' }
+  ] } },
+ {
+   $group: {
+     _id: "$followerId",
+     following: {
+       $push : "$followingId"
+     }
+   }
+ },
+   {    $group: {
+         _id:null,
+         following1: { $first: "$following" },
+         following2: { $last: "$following" }
+         }
+    },
+ {    $project:{
+   			_id:0,
+        mutual_following:{
+        $setIntersection:["$following1","$following2"]
+        }
+         }
+    }
+]
+
+[{ $match: 
+{ $or: [ 
+{ followerId: ObjectId('65a6558bfed7a90a9f1ed1f0') },
+{ followerId: ObjectId('65a65586fed7a90a9f1ed1ed') }
+] } },
+{
+$lookup: {
+  from: "page", 
+  localField: "followingId",
+  foreignField: "_id",
+  as: "mutual"
+}
+}, {
+$unwind: "mutual"
+},
+{
+$project: {
+  "_id": "$mutual._id",
+  "name": "$mutual.name",
+  "page_handle": "$mutual.page_handle",
+  "bio":"$mutual.bio",
+  "dp":"$mutual.dp",
+   "dob": "$mutual.dob",
+  "page_privacy":"$mutual.page_privacy",
+  "post_count": "$mutual.post_count",
+  "follower_count":"$mutual.follower_count",
+  "following_count": "$mutual.following_count",
+  "_class":"$mutual._class"
+}
+},
+]

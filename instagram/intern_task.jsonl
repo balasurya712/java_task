@@ -1,0 +1,45 @@
+suppliers{
+    _id:"",
+    name:"",
+    phnumber:"",
+    tire:"",
+    address:[]
+}
+
+transpoter{
+    _id:"",
+    name:"",
+    phnumber:"",
+    tire:"",
+    address:[],
+    transportationModeAvilable:[]
+}
+
+product{
+    _id:"",
+    category:"",
+    supplierId:"",
+    rawMaterial:[
+        {
+            productId:"",
+            dateOfPurchace:"",
+            transporterId:""
+        }
+    ]
+
+}
+
+brand{
+    _id:"",
+    name:"",
+    phnumber:"",
+    productCategorys:[],
+    address:[]
+}
+
+suppliers{
+    _id:"",
+    name:"",
+    phnumber:"",
+    purchasedProductID:[]
+}
